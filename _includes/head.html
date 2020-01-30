@@ -1,0 +1,37 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  {% seo title=false %}
+
+  <title>
+      {% if page.tag or page.title %}
+        {% if page.tag %}
+          {{ page.tag | escape }}
+        {% else %}
+          {{ page.title | escape }}
+        {% endif %}
+        -
+      {% endif %}
+      {% if paginator and paginator.page and paginator.total_pages > 1 and paginator.page > 1 %}
+        Page {{ paginator.page }} of {{ paginator.total_pages }} -
+      {% endif %}
+      {{ site.title | escape }}
+      {% unless page.tag or page.title %}
+        - {{ site.description | escape }}
+      {% endunless %}
+    </title>
+  
+  <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.png">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.baseurl }}/atom.xml">
+  <link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ "/feed.json" | prepend: site.baseurl | prepend: site.url }}" />
+  <link rel="sitemap" type="application/xml" title="sitemap" href="{{ site.baseurl }}/sitemap.xml" />
+      
+  <style>
+    {% capture include_to_scssify %}
+      {% include inline.scss %}
+    {% endcapture %}
+    {{ include_to_scssify | scssify }}
+  </style>
+
+</head>

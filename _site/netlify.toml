@@ -1,0 +1,106 @@
+[[headers]]
+  for = "/*" # This defines which paths this specific [[headers]] block will cover.
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "no-referrer"
+    X-Content-Type-Options = "nosniff"
+    
+    
+[[headers]]
+  for = "*.ico"
+  [headers.values]
+    Content-Type = "image/x-icon"
+    Cache-Control = "max-age=604800, public"
+
+[[headers]]
+  for = "*.svg"
+  [headers.values]
+    Content-Type = "image/svg+xml"
+    Cache-Control = "max-age=2628000, public"
+
+[[headers]]
+  for = "*.ttf"
+  [headers.values]
+    Content-Type = "font/ttf"
+    Cache-Control = "max-age=2628000, public"
+
+[[headers]]
+  for = "*.otf"
+  [headers.values]
+    Content-Type = "font/otf"
+    Cache-Control = "max-age=2628000, public"
+
+[[headers]]
+  for = "*.eot"
+  [headers.values]
+    Content-Type = "application/vnd.ms-fontobject"
+    Cache-Control = "max-age=2628000, public"
+
+[[headers]]
+  for = "*.woff"
+  [headers.values]
+    Content-Type = "font/woff"
+    Cache-Control = "max-age=2628000, public"
+
+[[headers]]
+  for = "*.woff2"
+  [headers.values]
+    Content-Type = "font/woff"
+    Cache-Control = "max-age=2628000, public"
+
+[[headers]]
+  for = "*.xml"
+  [headers.values]
+    Content-Type = "text/xml"
+    Cache-Control = "max-age=3600, public"
+
+[[headers]]
+  for = "*.mp4"
+  [headers.values]
+    Content-Type = "video/mp4"
+    Cache-Control = "max-age=604800, public"
+
+[[headers]]
+  for = "*.webm"
+  [headers.values]
+    Content-Type = "video/webm"
+    Cache-Control = "max-age=604800, public"
+
+[[headers]]
+  for = "*.docx"
+  [headers.values]
+    Content-Type = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    Cache-Control = "max-age=604800, public"
+
+[[headers]]
+  for = "*.pdf"
+  [headers.values]
+    Content-Type = "application/pdf"
+    Cache-Control = "max-age=604800, public"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "max-age=604800, public"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "max-age=604800, public"
+
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "max-age=604800, public"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "max-age=604800, public"
+
+[[headers]]
+  for = "*.gif"
+  [headers.values]
+    Cache-Control = "max-age=604800, public"
+

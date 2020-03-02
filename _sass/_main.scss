@@ -5,15 +5,25 @@
 	margin:0;
 	padding:0;
 }
+.dark {
+	body {
+		background-color: #26292d;
+		color: #b5babe;
+	}
+}
+.light {
+	body {
 
+	color: #495057;
+	background-color: #edf2f7;
+	}
+}
 body {
 	font-family: -apple-system,BlinkMacSystemFont,'avenir next',avenir,helvetica,'helvetica neue',ubuntu,roboto,noto,'segoe ui',arial,sans-serif;
 	-webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 	line-height:1.5;
 	font-size: 1rem;
-	color: #495057;
-	background-color: #edf2f7;
 }
 
 nav ul {
@@ -21,7 +31,7 @@ nav ul {
 }
 
 a {
-    color: #000;
+    color: rgb(235, 136, 82);
     text-decoration-skip-ink: auto;
     text-decoration: underline;
 }
@@ -82,6 +92,7 @@ header {
 
 header a {
 	text-decoration: none;
+	color: inherit;
 }
 
 header li {

@@ -5,6 +5,9 @@
    {% for item in site.data.navigation.links %}
       <li><a href="{{ item.url }}" {% if item.url == page.url %} class="active"{% endif %}>{{ item.title }}</a></li>
    {% endfor %}
+   <li><label style="cursor: pointer;" for="darkmode-toggle">~lights</label>
+      <input style="display:none" id="darkmode-toggle" class="darkmode-toggle" aria-label="toggle dark mode" type="checkbox"></li>
 </ul>
+
 </nav>
 </header>

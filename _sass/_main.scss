@@ -12,7 +12,8 @@ body {
     text-rendering: optimizeLegibility;
 	line-height:1.5;
 	font-size: 1rem;
-	color: rgb(22, 23, 26);
+	color: #495057;
+	background-color: #edf2f7;
 }
 
 nav ul {
@@ -156,7 +157,12 @@ strong, b {
 .post ul, .project ul, .post ol  {
 	list-style-position: inside;
 }
-
+.post-title {
+	background-color: #ef7d4d;
+	text-align: center;
+	padding: 2rem;
+	padding-top: 3rem;
+}
 main {
 	display:flex;
 	flex-wrap:wrap;

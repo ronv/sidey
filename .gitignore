@@ -6,3 +6,4 @@ Gemfile.lock
 .DS_Store
 .jekyll-cache
 .git
+_site/

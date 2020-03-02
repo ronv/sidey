@@ -1,7 +1,9 @@
-site: Sidey
+site: taloranderson.com
 url: #yoururl
-title: Sidey
-description: Simple and minimalistic jekyll blogging theme.
+title: Talor Anderson
+description: Hi! I'm Talor Anderson.
+
+resume_url: 'https://drive.google.com/open?id=18YST_yucGyDjMK506xMjzbOLX2i116HI'
 twitter:
   username: #yourusername
   card: summary
@@ -40,7 +42,7 @@ collections:
     permalink: /:name
   posts:
     output: true
-    permalink: /:year/:month/:day/:slug
+    permalink: /posts/:slug
   
 defaults:
   -

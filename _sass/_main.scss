@@ -154,7 +154,7 @@ strong, b {
 }
 
 .post ul, .project ul, .post ol  {
-	list-style-position: inside;
+	//list-style-position: inside;
 }
 
 main {
@@ -195,4 +195,8 @@ section {
 	display:flex;
 	flex-direction:column;
 	
+}
+
+figcaption {
+    font-size: smaller;
 }

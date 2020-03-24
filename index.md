@@ -5,8 +5,9 @@ layout: page
 
 I build exciting things with code.
 
-In the past, I was a developer at [Scratch.app](//scratch.app){:target="_blank"} building an educational platform for students, teachers, and universities. Right now, I'm finishing my B.S. in Computer Science at [Cal Poly Pomona](https://www.cpp.edu/sci/computer-science/){:target="_blank"}. My focus has been in software engineering and machine learning. After that, I'm joining [Intuit](https://intuit.com){:target="_blank"} as a Software Engineer.
+I'm an incoming New Grad Software Engineer at [Intuit](https://intuit.com){:target="_blank"}.
 
+In the past, I was a developer at [Scratch.app](//scratch.app){:target="_blank"} building an educational platform for students, teachers, and universities. Right now, I'm finishing my B.S. in Computer Science at [Cal Poly Pomona](https://www.cpp.edu/sci/computer-science/){:target="_blank"}. My focus has been in software engineering and machine learning.
 
 I love climbing and walking my [dog 🐕](https://instagram.com/thatsabiglab){:target="_blank"}.
 
@@ -17,11 +18,13 @@ I love climbing and walking my [dog 🐕](https://instagram.com/thatsabiglab){:t
 * [twitter](https://twitter.com/talor_a){:target="_blank"}
 * [instagram](https://instagram.com/talor_a){:target="_blank"}
 
-**Things I think about a lot:**
+**I'm inspired by:**
 
-* how the [internet](https://runyourown.social/#how-to-run-a-small-social-network-site-for-your-friends) affects our [relationships](https://youshoulddateppt.com) and [identity](https://www.snap.com/en-US/news/post/the-liquid-self)
-* how technology can improve education
+* making the web [smaller](https://runyourown.social/#how-to-run-a-small-social-network-site-for-your-friends), [slower](https://jackcheng.com/the-slow-web/), more [intimate](https://www.robinsloan.com/notes/home-cooked-app/), and more [human](https://medium.com/@the_i_i/were-a-niche-we-just-didn-t-know-9561f662e127).
+* how the internet shapes our [relationships](https://youshoulddateppt.com) and [identity](https://www.snap.com/en-US/news/post/the-liquid-self)
+* improving technology through education
 * sustainability and environmental awareness
-* making [technology](https://kottke.org/20/02/billie-eilish-interviewed-by-ai-bot) more [human](https://jackcheng.com/the-slow-web/)
 
-Are you also interested in these things? Get in [touch](https://twitter.com/talor_a){:target="_blank"} and let's talk about it! :)
+**If you're also interested in these things...**
+
+Get in [touch](https://twitter.com/talor_a){:target="_blank"} and let's talk about it! :)

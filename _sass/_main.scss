@@ -1,3 +1,6 @@
+$primary: rgb(108, 152, 137);
+
+
 *,:after,:before {
 	box-sizing:border-box;
 	background-color:inherit;
@@ -19,11 +22,13 @@
 	}
 }
 body {
-	font-family: -apple-system,BlinkMacSystemFont,'avenir next',avenir,helvetica,'helvetica neue',ubuntu,roboto,noto,'segoe ui',arial,sans-serif;
+	font-family: 'Roboto Mono', monospace;
+	// font-family: -apple-system,BlinkMacSystemFont,'avenir next',avenir,helvetica,'helvetica neue',ubuntu,roboto,noto,'segoe ui',arial,sans-serif;
 	-webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 	line-height:1.5;
 	font-size: 1rem;
+	transition: all 0.2s linear;
 }
 
 nav ul {
@@ -31,9 +36,20 @@ nav ul {
 }
 
 a {
-    color: rgb(235, 136, 82);
+    color: $primary;
     text-decoration-skip-ink: auto;
     text-decoration: underline;
+}
+a:not(.nav-link) {
+	&:link, &:visited {
+		text-decoration: none;
+		border-bottom: 3px solid $primary;
+		color: currentColor;
+		transition: background 0.2s linear;
+		}
+	&:hover {
+		background: $primary !important;
+		}
 }
 
 pre {

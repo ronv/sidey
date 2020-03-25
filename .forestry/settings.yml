@@ -4,6 +4,10 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: document
+  path: index.md
+  label: homepage
+  match: "**/*"
 - type: jekyll-pages
   label: Pages
   create: all

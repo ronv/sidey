@@ -1,8 +1,8 @@
 ---
 title: Hi! I'm Talor Anderson.
 layout: post
----
 
+---
 I build exciting things with code.
 
 I'm an incoming New Grad Software Engineer at [Intuit](https://intuit.com){:target="_blank"}.
@@ -20,8 +20,8 @@ I love climbing and walking my [dog 🐕](https://instagram.com/thatsabiglab){:t
 
 **I'm inspired by:**
 
-* making the web [smaller](https://runyourown.social/#how-to-run-a-small-social-network-site-for-your-friends), [slower](https://jackcheng.com/the-slow-web/), more [intimate](https://www.robinsloan.com/notes/home-cooked-app/), and more [human](https://medium.com/@the_i_i/were-a-niche-we-just-didn-t-know-9561f662e127).
-* how the internet shapes our [relationships](https://youshoulddateppt.com) and [identity](https://www.snap.com/en-US/news/post/the-liquid-self)
+* making the web [smaller](https://runyourown.social/#how-to-run-a-small-social-network-site-for-your-friends){:target="_blank"}, [slower](https://jackcheng.com/the-slow-web/){:target="_blank"}, more [intimate](https://www.robinsloan.com/notes/home-cooked-app/){:target="_blank"}, and more [human](https://medium.com/@the_i_i/were-a-niche-we-just-didn-t-know-9561f662e127){:target="_blank"}.
+* how the internet shapes our [relationships](https://youshoulddateppt.com){:target="_blank"} and [identity](https://www.snap.com/en-US/news/post/the-liquid-self){:target="_blank"}
 * improving technology through education
 * sustainability and environmental awareness
 

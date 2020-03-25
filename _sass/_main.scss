@@ -1,24 +1,27 @@
 $primary: rgb(108, 152, 137);
-
+$dark-fg: #b5babe;
+$dark-bg: #26292d;
+$light-fg: #495057;
+$light-bg: #edf2f7;
 
 *,:after,:before {
 	box-sizing:border-box;
-	background-color:inherit;
-	color:inherit;
+	// background-color:inherit;
+	// color:inherit;
 	margin:0;
 	padding:0;
 }
 .dark {
 	body {
-		background-color: #26292d;
-		color: #b5babe;
+		background-color: $dark-bg;
+		color: $dark-fg;
 	}
 }
 .light {
 	body {
 
-	color: #495057;
-	background-color: #edf2f7;
+	color: $light-fg;
+	background-color: $light-bg;
 	}
 }
 body {
@@ -28,11 +31,11 @@ body {
     text-rendering: optimizeLegibility;
 	line-height:1.5;
 	font-size: 1rem;
-	transition: all 0.2s linear;
+	transition: all 0.2s ease-in-out;
 }
 
 nav ul {
-    border-right: 1px solid #edf2f7;
+    border-right: 1px solid currentColor;
 }
 
 a {
@@ -74,9 +77,12 @@ pre {
 }
 
 code,pre {
-	background: rgb(236, 237, 238);
+	background: darken($color: $light-bg, $amount: 10);
 }
+.dark code, .dark pre {
+	background: lighten($color: $dark-bg, $amount: 10);
 
+}
 code {
 	padding: .1rem;
 }
@@ -185,7 +191,8 @@ strong, b {
 	list-style-position: inside;
 }
 .post-title {
-	background-color: #ef7d4d;
+	background-color: $primary;
+	color: white;
 	text-align: center;
 	padding: 2rem;
 	padding-top: 3rem;

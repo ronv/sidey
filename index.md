@@ -1,6 +1,6 @@
 ---
 title: Hi! I'm Talor Anderson.
-layout: page
+layout: post
 ---
 
 I build exciting things with code.

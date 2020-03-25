@@ -14,7 +14,7 @@ author:
   avatar:
   email: #youremail
   url: #yoururl
-permalink: pretty
+# permalink: /posts/:title:output_ext
 
 baseurl: ""
 

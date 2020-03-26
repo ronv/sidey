@@ -2,7 +2,7 @@ links:
 - title: home
   url: /
 - title: posts
-  url: /posts.html
+  url: /posts/
 - title: work
   url: /work
 # - title: Search

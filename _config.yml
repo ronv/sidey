@@ -14,7 +14,6 @@ author:
   avatar:
   email: #youremail
   url: #yoururl
-# permalink: /posts/:title:output_ext
 
 baseurl: ""
 
@@ -42,7 +41,7 @@ collections:
     permalink: /:name
   posts:
     output: true
-    permalink: /posts/:slug
+    permalink: /:year/:month/:day/:title:output_ext
   
 defaults:
   -

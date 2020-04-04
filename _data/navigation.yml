@@ -1,10 +1,12 @@
 links:
 - title: home
   url: /
-- title: posts
-  url: /posts/
+- title: journal
+  url: /journal/
 - title: work
   url: /work
+- title: notes
+  url: /notes/
 # - title: Search
 #   url: /search
 # - title: Rss

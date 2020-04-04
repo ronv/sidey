@@ -1,0 +1,57 @@
+---
+layout: default
+---
+<div>
+
+  {% assign folderfilter = page.path | replace: "/index.html" , "" %}
+  
+  {% assign path = page.path | split:"/" %}
+  
+  {% include wikibreadcrumb.html %}
+  
+  <p>{{content}}</p>
+  
+  <div class="fl w-60-l w-100 min-h5">
+    {% assign notes = site.pages | where_exp: "item" , "item.path contains folderfilter" | sort:"pinned" | reverse %}
+    
+    {% assign snippets = site.static_files | where_exp: "item" , "item.path contains folderfilter" %}
+    
+    <h3>Notes:</h3>
+    
+    {% if page.expand %}
+    {% for item in notes %}
+    {% unless item.path contains "index.html" %}
+    <div class="pb4 pr2-l">
+      <hr>
+      <a class="link gray f5" href="{{item.url}}"># {{item.path | replace: folderfilter , ""}}</a></li>
+      {{item.content | markdownify}}    
+    </div>
+    {% endunless %}
+    {% endfor %}
+    {% else %}
+    <ul>
+      {% for item in notes %}
+      {% unless item.path contains "index.html" %}
+      <li class="pv1">{%if item.pinned %}📌{% endif %} <a href="{{item.url}}">{{item.path | replace: folderfilter , ""}}</a></li>
+      {% endunless %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+    
+    <h3>Snippets:</h3>
+    {% for item in snippets %}
+    <div class="fl w-50-l w-100 pa2">
+      <a href="{{item.path}}" class="link dim tc">
+        <iframe src="{{item.path}}" class="db outline black-30"> </iframe>
+        <dl class="mt2 f6 lh-copy">
+          <dt class="clip">{{item.path}}</dt>
+          <dd class="ml0 black truncate w-100">{{item.path}}</dd>
+        </dl>
+      </a>
+    </div>
+    {% endfor %}
+    
+  </div>
+  
+</div>
+</div>

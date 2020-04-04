@@ -1,0 +1,34 @@
+---
+layout: page
+title: notes
+---
+<p>This is my personal digital garden. A wild garden, loosely tended. There's drafts, ideas, partials, fragments and ideas.</p>
+
+{% assign folders = site.pages | where_exp:"item", "item.path contains 'notes'" %}
+{% assign wikifolders = "" | split:"" %}
+
+{% for folder in folders %}
+  {% assign tempvar = folder.path | split:"/" %}
+  {% assign wikifolders = wikifolders | push:tempvar[1] %}
+{% endfor %}
+
+{% assign wikifolders = wikifolders | uniq | sort %}
+
+{% for folder in wikifolders %}
+  {% unless folder contains 'md' or folder contains 'html' %}
+    <div class="fl w-third-l w-100 mb1 mt1 pr4-l">
+      <a class="link black" href="/notes/{{folder}}/">{{folder | capitalize}}</a>
+    </div>
+  {% endunless %}
+{% endfor %}
+
+<h3>All notes</h3>
+
+{% assign folder1 = site.pages | where_exp: "item" , "item.path contains 'notes'" | sort:"path" %}
+{% for item in folder1 %}
+<p>
+
+  <a href="{{ item.url }}">{{item.path}}</a>
+</p>
+{% endfor %}
+

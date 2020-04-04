@@ -36,12 +36,9 @@ plugins:
   - jekyll-sitemap  
 
 collections:
-  pages:
+  journal:
     output: true
-    permalink: /:name
-  posts:
-    output: true
-    permalink: /:year/:month/:day/:title:output_ext
+    permalink: /:year-:month-:day:output_ext
   
 defaults:
   -
@@ -52,12 +49,12 @@ defaults:
   -
     scope:
       path: ""
-      type: "pages"
-    values:
-      layout: "page"
-  -
-    scope:
-      path: ""
       type: "posts"
     values:
       layout: "post"
+      defaults:
+  - 
+    scope:
+      path: "/notes/*"
+    values:
+      layout: "wiki"

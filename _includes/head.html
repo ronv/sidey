@@ -27,12 +27,14 @@
   <link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ "/feed.json" | prepend: site.baseurl | prepend: site.url }}" />
   <link rel="sitemap" type="application/xml" title="sitemap" href="{{ site.baseurl }}/sitemap.xml" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/awsm.min.css">
+{%- comment -%}   
   <style>
     {% capture include_to_scssify %}
       {% include inline.scss %}
     {% endcapture %}
     {{ include_to_scssify | scssify }}
-  </style>
+  </style> 
+  {%- endcomment -%}
 
 </head>

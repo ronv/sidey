@@ -2,7 +2,6 @@ tmp
 *.rdb
 .env
 .sass-cache
-Gemfile.lock
 .DS_Store
 .jekyll-cache
 .git

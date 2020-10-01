@@ -1,16 +1,16 @@
-site: Sidey
-url: #yoururl
+site: dan
+url: danjacobson.net
 title: dan jacobson
-description: Simple and minimalistic jekyll blogging theme.
+description: About me
 twitter:
   username: danrowejacobson
   card: summary
   creator: dan jacobson
 author:
   twitter: #yourusername
-  name: #yourusername
+  name: dan jacobson
   avatar:
-  email: #youremail
+  email: danrowejacobson@gmail.com
   url: #yoururl
 permalink: pretty
 
@@ -20,7 +20,7 @@ highlighter: none
 
 exclude:
   - .jekyll-cache
-  
+
 compress_html:
   clippings: all
   comments: ["<!-- ", " -->"]
@@ -32,7 +32,7 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-sitemap  
+  - jekyll-sitemap
 
 collections:
   pages:
@@ -41,7 +41,7 @@ collections:
   posts:
     output: true
     permalink: /:year/:month/:day/:slug
-  
+
 defaults:
   -
     scope:

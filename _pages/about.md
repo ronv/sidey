@@ -1,28 +1,19 @@
 ---
 layout: page
-title: About
+title: Dan Jacobson
 ---
 
-Sidey is a simple and minimalistic jekyll blogging theme.
+A former biomedical engineer turned data scientist and machine learning engineer. I like ultimate frisbee, skiing, card games, and overly ambitious cooking projects.
 
-### Features
+### Things I worked on
 
-- Responsive design
-- Inline CSS
-- Anchor headings
-- Search
-- Tags & tag pages
-- Security headers (for Netlify hosting)
-- 404 page
-- Compressed CSS and HTML
-- 100/100 score on Lighthouse, Page Speed Insights & Webpagetest
-- Robots.txt
-- Atom & Json feeds
-- Sass
-- Seo optimized (Twitter cards, Facebook Open Graph, Schema.org)
-- Ultra fast (Only ~5kb of CSS)
-- Sidebar navigation
+- A Project
+- Something else
+- Some videos I made
+- Books I've liked
+- Kitchen successes and failures
+- Idk a blog??
 
-### Screenshot
+### A Video
 
 ![Screenshot](screenshot.png)

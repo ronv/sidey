@@ -1,11 +1,11 @@
 site: Sidey
-url: #yoururl
-title: Sidey
+url: https://github.com/ronv/sidey.git
+title: onmind
 description: Simple and minimalistic jekyll blogging theme.
 twitter:
-  username: #yourusername
+  username: onmind
   card: summary
-  creator: #yourusername
+  creator: onmind
 author:
   twitter: #yourusername
   name: #yourusername

@@ -1,24 +1,12 @@
-# Sidey
+# onmind
 
-Sidey is a simple and minimalistic jekyll blogging theme.
+글을 쓰는 연습을 하는 공간입니다. 
 
 ### Features
 
-- Responsive design
-- Inline CSS
-- Anchor headings
-- Search
-- Tags & tag pages
-- Security headers (for Netlify hosting)
-- 404 page
-- Compressed CSS and HTML
-- 100/100 score on Lighthouse, Page Speed Insights & Webpagetest
-- Robots.txt
-- Atom & Json feeds
-- Sass
-- Seo optimized (Twitter cards, Facebook Open Graph, Schema.org)
-- Ultra fast (Only ~5kb of CSS)
-- Sidebar navigation
+- Game
+- daily basis 
+- and more 
 
 ### Screenshot
 

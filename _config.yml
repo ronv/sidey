@@ -1,22 +1,22 @@
-site: Sidey
-url: #yoururl
-title: Sidey
-description: Simple and minimalistic jekyll blogging theme.
+site: boch.dev
+url: 'https://boch.dev'
+title: boch.dev
+description: Dull notes about Ruby and JS.
 twitter:
-  username: #yourusername
+  username: Boch_Patryk
   card: summary
-  creator: #yourusername
+  creator: patrykboch
 author:
-  twitter: #yourusername
-  name: #yourusername
+  twitter: patrykboch
+  name: Patryk
   avatar:
-  email: #youremail
-  url: #yoururl
+  email: patrykboch@gmail.com
+  url: boch.dev
 permalink: pretty
 
 baseurl: ""
 
-highlighter: none
+highlighter: rouge
 
 exclude:
   - .jekyll-cache

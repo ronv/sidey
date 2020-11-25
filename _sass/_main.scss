@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+$defaultFontFamily: 'Source Sans Pro', sans-serif;
+
 *,:after,:before {
 	box-sizing:border-box;
 	background-color:inherit;
@@ -30,7 +34,12 @@ pre {
 	padding: .5rem;
 }
 
+.post { 
+  font-family: $defaultFontFamily;
+} 
+
 .post p {
+	line-height: 18pt;
 	margin: .5rem 0;
 }
 
@@ -48,6 +57,10 @@ pre {
 
 code,pre {
 	background: rgb(236, 237, 238);
+}
+
+.logo {
+   color: red;
 }
 
 code {
@@ -81,6 +94,7 @@ header {
 
 header a {
 	text-decoration: none;
+	font-family: $defaultFontFamily;
 }
 
 header li {
@@ -90,6 +104,8 @@ header li {
 }
 
 header a.active {
+	font-family: $defaultFontFamily; 
+	// color: red; 
 	font-weight: bold;
 }
 
@@ -100,7 +116,9 @@ header,section {
 blockquote {
 	font-style: italic;
     border-left: 5px solid #ececec;
-    padding-left: 1rem;
+	padding-left: 1rem;
+	margin: 2% 0;
+	font-size: 11pt;
 }
 
 h1,h2,h3,h4,h5 {
@@ -141,6 +159,7 @@ strong, b {
 }
 
 .posts li a, .posts li div, .projects li a {
+	font-family: $defaultFontFamily;
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow:ellipsis;
@@ -148,6 +167,10 @@ strong, b {
 }
 
 .posts li time, .projects li time {
+	font-family: $defaultFontFamily;
+	font-weight: 400;
+	font-size: 13px;
+	color: red;
 	padding-left: 1rem;
 	white-space: nowrap;
 	font-variant-numeric: tabular-nums;
@@ -194,9 +217,92 @@ section {
 	min-width:70%;
 	display:flex;
 	flex-direction:column;
+	text-align:justify;
 	
 }
 
 figcaption {
     font-size: smaller;
 }
+
+.highlight {
+	.c, .cm, .c1, .cs {
+	  color: #408080;
+	}
+	.k, .kc, .kd, .kn, .kp, .kr, .sx, .bp, .nt, .nb {
+	  color: #008000;
+	}
+	.o, .m, .mf, .mh, .mi, .mo, .il {
+	  color: #666666;
+	}
+	.cp {
+	  color: #bc7a00;
+	}
+	.gd {
+	  color: #a00000;
+	}
+	.gr {
+	  color: #ff0000;
+	}
+	.gh, .gp {
+	  color: #000080;
+	}
+	.gi {
+	  color: #00a000;
+	}
+	.go {
+	  color: #808080;
+	}
+	.gu {
+	  color: #800080;
+	}
+	.gt {
+	  color: #0040d0;
+	}
+	  .kt {
+	  color: #b00040;
+	}
+	.na {
+	  color: #7d9029;
+	}
+	.no {
+	  color: #880000;
+	}
+	.nd, .ow {
+	  color: #aa22ff;
+	}
+	.ni {
+	  color: #999999;
+	}
+	.ne {
+	  color: #d2413a;
+	}
+	.nc, .nf, .nn {
+	  color: #0000ff;
+	}
+	.nl {
+	  color: #a0a000;
+	}
+	.w {
+	  color: #bbbbbb;
+	}
+	.s, .sb, .sc, .sd, .s2, .sh, .s1 {
+	  color: #ba2121;
+	}
+	.se {
+	  color: #bb6622;
+	}
+	.si, .sr {
+	  color: #bb6688;
+	}
+	.ss, .vs, .vg, .vi, .nv {
+	  color: #19177c;
+	}
+	.c, .cm, .c1, .cs, .ge, .sd {
+	  font-style: italic;
+	}
+	.k, .kc, .kd, .kn, .kr, .gh, .gp, .gs, .gu, .nc, .ni, .ne, .nn, .nt, .ow, .se, .si {
+	  font-weight: bold;
+	}
+  }
+  

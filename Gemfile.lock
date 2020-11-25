@@ -68,6 +68,8 @@ DEPENDENCIES
   jekyll-paginate
   jekyll-seo-tag
   jekyll-sitemap
+  kramdown
+  rouge
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

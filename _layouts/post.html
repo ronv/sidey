@@ -3,9 +3,17 @@ layout: default
 ---
 
 <section class="post">
-  <h2>{{ page.title }}</h2>
+  <div class="flex-row-between">
+    <a href="{{site.url}}/">« back</a>
+    <button id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+    </button>
+  </div>
+  <h1 class="title">{{ page.title }}</h1>
+  <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
   {{ content }}
-  <span class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time> &middot; {% for tag in page.tags %}
+  <span class="meta">
+    {% for tag in page.tags %}
     <a href="/tag/{{tag}}">{{tag}}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>
 </section>
 

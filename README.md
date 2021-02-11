@@ -1,13 +1,15 @@
-# Sidey
+# Asko
 
-Sidey is a simple and minimalistic jekyll blogging theme.
+Asko is a simple and minimalistic jekyll blogging theme. 
+Forked from [Sidey theme](https://github.com/ronv/sidey).  
+Thanks to [Asko Nõmm](https://www.askonomm.com/) that gave me permission to copy his blog theme.
 
 ### Features
 
 - Responsive design
+- Dark/Light theme
 - Inline CSS
 - Anchor headings
-- Search
 - Tags & tag pages
 - Security headers (for Netlify hosting)
 - 404 page
@@ -18,7 +20,6 @@ Sidey is a simple and minimalistic jekyll blogging theme.
 - Sass
 - Seo optimized (Twitter cards, Facebook Open Graph, Schema.org)
 - Ultra fast (Only ~5kb of CSS)
-- Sidebar navigation
 
 ### Screenshot
 

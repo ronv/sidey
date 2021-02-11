@@ -23,4 +23,6 @@ Thanks to [Asko Nõmm](https://www.askonomm.com/) that gave me permission to cop
 
 ### Screenshot
 
-![Screenshot](screenshot.png)
+![Screenshot light](screenshot-light.png)
+
+![Screenshot dark](screenshot-dark.png)

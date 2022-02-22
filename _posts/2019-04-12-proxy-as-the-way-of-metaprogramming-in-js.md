@@ -9,7 +9,7 @@ comments: true
 
 Important note: Described _Proxy_ JS object is something different than one of the OOP patterns.
 
-Since I started using JS every single day I’ve experienced some strange aspects of JS. One of them annoys me - _undefined_ instead of code execution error (among others when accessing unexistent properties). The JS behavior in this aspect is slightly different from Ruby that I'm used to:
+Since I started using JS every single day I’ve experienced some weird aspects of JS. One of them annoys me - `undefined` instead of code execution error when accessing unexistent properties. The JS behavior in this aspect is slightly different from Ruby that I'm used to:
 
 <script src="https://gist.github.com/patrykboch/48bf5dd1f626c2c889c8bfa43931dd51.js"></script>
 
@@ -17,29 +17,29 @@ and a Ruby equivalent:
 
 <script src="https://gist.github.com/patrykboch/c29bb0a5faacee9c1548c23eb4eff44b.js"></script>
 
-Ruby (with non-specified _default_value_) produces the errors, code executions throw. Imagine working on a big JS project and a small property typo breaks an app - because of _undefined_ instead of the _key not found_ throw - don’t know why and where since there are lots of possibly places for _undefined_ (debugging undefined may take a long time). Luckily the ES6+ standard gives a solution to this via built-in Proxies objects.
+Ruby produces the error throw, JS returns `undefined`. Imagine working on a big JS project and a small property typo breaks an app - because of `undefined` instead of the _key not found_ throw - don’t know why and where since there are lots of possibly places for `undefined` (debugging undefined may take a long time). Luckily the ES6+ standard gives a solution to this via built-in Proxies objects.
 
 Since the release of ES6, JS is known as fully reflective programming language as the Reflection API has been advanced.
 
 >Reflection is the ability of a computer program to examine, introspect, and modify its own structure and behavior at runtime.
 
-That means that a program can process itself on the three noted levels. Please note ES5 has provided the ability to reflective introspection and self-modification: `Object.keys()` for introspection or `Object#delete` for self-modification - all `Object.*` methods are taken as reflective for metaprogramming, but neither they nor other ES5 features support the third level of reflection - _behavioral level_ and it was the reason for introducing proxies in ES6 that change built-in language operations.
+That means a program can process itself on the three noted levels. Please note ES5 has provided the ability to reflective introspection and self-modification: `Object.keys()` for introspection or `Object#delete` for self-modification - all `Object.*` methods are taken as reflective for metaprogramming, but neither they nor other ES5 features support the third level of reflection - _behavioral level_ and it was the reason for introducing proxies in ES6 that change built-in language operations.
 
 > The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc). [(official docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming)
 
-Using proxies is a manner for virtualizing objects eg. a POJO. Virtualized object peeks the same as a given object, and any operation on a given one directs to an already created virtualized by a proxy object. By virtualization, we can take control of standard methods default behavior by intercepting invocations and re-defining them.
+Using proxies is a manner for virtualizing objects eg. POJOs. Virtualized object peeks the same as a given object, and any operation on a given one directs to an already created virtualized by a proxy object. By virtualization, we can take control of standard methods default behavior by intercepting invocations and re-defining them.
 
 <script src="https://gist.github.com/patrykboch/cf189feaad1e574d01194ff9d9a04a31.js"></script>
 
 Nothing special above, virtualization of the object and the property lookup without invoking any operations
 (see: [no-op forwarding](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#No-op_forwarding_proxy)). 
-If you add a property for an object, the same property for a proxy object will be added. Some kind of a symlink, but proxies are built 
-for intercepting the low-level operations on the target object indeed. The first argument for the Proxy is a target, the second is a handler.
+If you add a property for an object, the same property for a proxy object is added. Kinda symlink, but proxies are built 
+for intercepting the low-level operations on the target object indeed. The first argument for the `Proxy` constructor is target, the second is handler.
 
 ## Error instead of _undefined_
-_...when accessing non-existent property with the `get()` trap._
+_...when accessing non-existent property with the `get` trap._
 
-Let's figure out a problem mentioned at the beginning of the article. How we can change the default behoaviour that ends with _undefined_ instead of code execution error like in Ruby or Python? At the beggining let's describe the default behaviour with a proxy object:
+Let's figure out a problem mentioned at the beginning of the article. How we can change the default behoaviour that ends with `undefined` instead of code execution error like in Ruby or Python? At the beggining let's describe the default behaviour with a proxy object:
 
 <script src="https://gist.github.com/patrykboch/d069e35aaf76b55c5f75ffe6a35eef34.js"></script>
 
@@ -47,7 +47,7 @@ Let's change the default behaviour:
 
 <script src="https://gist.github.com/patrykboch/3e2608d8ba474e311066d7bafe06127e.js"></script>
 
-I use the `get()` trap to intercept default behavior when accessing the property. I passed three arguments to the trap: 1) the `trapTarget` - the target object for the proxy, 2) the `key` - the property and 3) the `receiver` - it's the proxy reference.
+I use the `get` trap to intercept the default behavior when accessing the property. I passed three arguments to the trap: 1) the `trapTarget` - the target object for the proxy, 2) the `key` - the property and 3) the `receiver` - it's the proxy reference.
 Logic ends with `Reflect` - the js object without constructor which expresses a default js behavior. Every proxy trap has an equivalent in a `Reflect` method.
 <br> 
 <br> 

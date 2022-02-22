@@ -4,7 +4,7 @@
  <title>boch.dev</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-02-22T22:52:31+01:00</updated>
+ <updated>2022-02-22T23:20:32+01:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Patryk</name>
@@ -19,7 +19,7 @@
    <id>http://localhost:4000/2019/04/12/proxy-as-the-way-of-metaprogramming-in-js</id>
    <content type="html">&lt;p&gt;Important note: Described &lt;em&gt;Proxy&lt;/em&gt; JS object is something different than one of the OOP patterns.&lt;/p&gt;
 
-&lt;p&gt;Since I started using JS every single day I’ve experienced some strange aspects of JS. One of them annoys me - &lt;em&gt;undefined&lt;/em&gt; instead of code execution error (among others when accessing unexistent properties). The JS behavior in this aspect is slightly different from Ruby that I’m used to:&lt;/p&gt;
+&lt;p&gt;Since I started using JS every single day I’ve experienced some weird aspects of JS. One of them annoys me - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; instead of code execution error when accessing unexistent properties. The JS behavior in this aspect is slightly different from Ruby that I’m used to:&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/patrykboch/48bf5dd1f626c2c889c8bfa43931dd51.js&quot;&gt;&lt;/script&gt;
 
@@ -27,7 +27,7 @@
 
 &lt;script src=&quot;https://gist.github.com/patrykboch/c29bb0a5faacee9c1548c23eb4eff44b.js&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;Ruby (with non-specified &lt;em&gt;default_value&lt;/em&gt;) produces the errors, code executions throw. Imagine working on a big JS project and a small property typo breaks an app - because of &lt;em&gt;undefined&lt;/em&gt; instead of the &lt;em&gt;key not found&lt;/em&gt; throw - don’t know why and where since there are lots of possibly places for &lt;em&gt;undefined&lt;/em&gt; (debugging undefined may take a long time). Luckily the ES6+ standard gives a solution to this via built-in Proxies objects.&lt;/p&gt;
+&lt;p&gt;Ruby produces the error throw, JS returns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;. Imagine working on a big JS project and a small property typo breaks an app - because of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; instead of the &lt;em&gt;key not found&lt;/em&gt; throw - don’t know why and where since there are lots of possibly places for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; (debugging undefined may take a long time). Luckily the ES6+ standard gives a solution to this via built-in Proxies objects.&lt;/p&gt;
 
 &lt;p&gt;Since the release of ES6, JS is known as fully reflective programming language as the Reflection API has been advanced.&lt;/p&gt;
 
@@ -35,25 +35,25 @@
   &lt;p&gt;Reflection is the ability of a computer program to examine, introspect, and modify its own structure and behavior at runtime.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;That means that a program can process itself on the three noted levels. Please note ES5 has provided the ability to reflective introspection and self-modification: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.keys()&lt;/code&gt; for introspection or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object#delete&lt;/code&gt; for self-modification - all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.*&lt;/code&gt; methods are taken as reflective for metaprogramming, but neither they nor other ES5 features support the third level of reflection - &lt;em&gt;behavioral level&lt;/em&gt; and it was the reason for introducing proxies in ES6 that change built-in language operations.&lt;/p&gt;
+&lt;p&gt;That means a program can process itself on the three noted levels. Please note ES5 has provided the ability to reflective introspection and self-modification: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.keys()&lt;/code&gt; for introspection or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object#delete&lt;/code&gt; for self-modification - all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.*&lt;/code&gt; methods are taken as reflective for metaprogramming, but neither they nor other ES5 features support the third level of reflection - &lt;em&gt;behavioral level&lt;/em&gt; and it was the reason for introducing proxies in ES6 that change built-in language operations.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc). &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming&quot;&gt;(official docs)&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Using proxies is a manner for virtualizing objects eg. a POJO. Virtualized object peeks the same as a given object, and any operation on a given one directs to an already created virtualized by a proxy object. By virtualization, we can take control of standard methods default behavior by intercepting invocations and re-defining them.&lt;/p&gt;
+&lt;p&gt;Using proxies is a manner for virtualizing objects eg. POJOs. Virtualized object peeks the same as a given object, and any operation on a given one directs to an already created virtualized by a proxy object. By virtualization, we can take control of standard methods default behavior by intercepting invocations and re-defining them.&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/patrykboch/cf189feaad1e574d01194ff9d9a04a31.js&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Nothing special above, virtualization of the object and the property lookup without invoking any operations
 (see: &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#No-op_forwarding_proxy&quot;&gt;no-op forwarding&lt;/a&gt;). 
-If you add a property for an object, the same property for a proxy object will be added. Some kind of a symlink, but proxies are built 
-for intercepting the low-level operations on the target object indeed. The first argument for the Proxy is a target, the second is a handler.&lt;/p&gt;
+If you add a property for an object, the same property for a proxy object is added. Kinda symlink, but proxies are built 
+for intercepting the low-level operations on the target object indeed. The first argument for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Proxy&lt;/code&gt; constructor is target, the second is handler.&lt;/p&gt;
 
 &lt;h2 id=&quot;error-instead-of-undefined&quot;&gt;Error instead of &lt;em&gt;undefined&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;…when accessing non-existent property with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get()&lt;/code&gt; trap.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;…when accessing non-existent property with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get&lt;/code&gt; trap.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Let’s figure out a problem mentioned at the beginning of the article. How we can change the default behoaviour that ends with &lt;em&gt;undefined&lt;/em&gt; instead of code execution error like in Ruby or Python? At the beggining let’s describe the default behaviour with a proxy object:&lt;/p&gt;
+&lt;p&gt;Let’s figure out a problem mentioned at the beginning of the article. How we can change the default behoaviour that ends with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; instead of code execution error like in Ruby or Python? At the beggining let’s describe the default behaviour with a proxy object:&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/patrykboch/d069e35aaf76b55c5f75ffe6a35eef34.js&quot;&gt;&lt;/script&gt;
 
@@ -61,7 +61,7 @@ for intercepting the low-level operations on the target object indeed. The first
 
 &lt;script src=&quot;https://gist.github.com/patrykboch/3e2608d8ba474e311066d7bafe06127e.js&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;I use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get()&lt;/code&gt; trap to intercept default behavior when accessing the property. I passed three arguments to the trap: 1) the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;trapTarget&lt;/code&gt; - the target object for the proxy, 2) the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;key&lt;/code&gt; - the property and 3) the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;receiver&lt;/code&gt; - it’s the proxy reference.
+&lt;p&gt;I use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get&lt;/code&gt; trap to intercept the default behavior when accessing the property. I passed three arguments to the trap: 1) the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;trapTarget&lt;/code&gt; - the target object for the proxy, 2) the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;key&lt;/code&gt; - the property and 3) the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;receiver&lt;/code&gt; - it’s the proxy reference.
 Logic ends with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reflect&lt;/code&gt; - the js object without constructor which expresses a default js behavior. Every proxy trap has an equivalent in a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reflect&lt;/code&gt; method.
 &lt;br /&gt; 
 &lt;br /&gt;&lt;/p&gt;

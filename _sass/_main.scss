@@ -51,12 +51,17 @@ pre {
 	margin-top: 0;
 }
 
+.gist { margin-top: 10px; }
+
 .meta {
 	margin: 2rem 0;
 }
 
 code,pre {
-	background: rgb(236, 237, 238);
+	// background: rgb(236, 237, 238);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
 }
 
 .logo {
@@ -64,7 +69,8 @@ code,pre {
 }
 
 code {
-	padding: .1rem;
+	font-size: 14px;
+ 	padding: .1rem;
 }
 
 pre code {
@@ -114,11 +120,10 @@ header,section {
 }
 
 blockquote {
-	font-style: italic;
     border-left: 5px solid #ececec;
 	padding-left: 1rem;
-	margin: 2% 0;
-	font-size: 11pt;
+	margin: 2% 0; 
+	font-size: 17px;
 }
 
 h1,h2,h3,h4,h5 {

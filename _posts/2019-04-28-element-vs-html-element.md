@@ -1,5 +1,6 @@
 ---
 title: Element vs HTMLElement
+published: false
 ---
 Imagine an old React component written in Typescript that renders an element with `React.createElement` function from top-level React API with a `ref` callback.
 

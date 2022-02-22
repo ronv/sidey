@@ -15,12 +15,8 @@ Hollywood law is the better name (IMO) for `Inversion of control (IoC)` principl
 It means that program (framework) can examine and call itself and take control of itself at the appropriate moment. 
 We don't have to ask runtime for changes and call it afterwards - the runtime will call itself/us if something happens. 
 
-This is possible by `reflection` and its _Reflection API_ [2] and mostly used with dependency injection pattern: 
+This is possible by `reflection` that I explained here and it is mostly used with dependency injection pattern named
 _injection by the reflection_ [3]. 
-
-
-
-
 
 Ruby offers `object lifecycle callbacks` also called hooks which can track changes and extend program behaviour at runtime.
 This let a program being notified and u
@@ -28,8 +24,8 @@ This let a program being notified and u
 ### Extend through include 
 
 Like classes, Ruby modules are bundles of methods and constants. Unlike classes, modules don’t have instances. 
-Creation of a ruby class is equal to the creation of an instance. But modules are not useless and they can help 
-organize code (modules encourage modular design) and also be mixed into classes by mixins. In Ruby, we got three types 
+Creation of a ruby class is equal to the creation of an instance. But modules are not pointless and they help 
+organize code (modules encourage modular design) and also are mixed into classes by mixins. In Ruby, we got three types 
 of mixins: `prepend`, `extend` and `include` and they are widely known for Ruby programmers as the part of Ruby 
 basics indeed (i.e. used for multiple inheritance [3]). I'm not gonna go into 
 mixin details because there are plenty of another sources with Ruby basics that displays what it is and for which 

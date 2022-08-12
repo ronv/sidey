@@ -3,10 +3,10 @@
     {
 
       "title"    : "Proxy as the way of metaprogramming in JS",
-      "url"      : "/2019/04/12/proxy-as-the-way-of-metaprogramming-in-js",
+      "url"      : "/2022/08/12/proxy-as-the-way-of-metaprogramming-in-js",
       "category" : "",
       "tags"     : "js, proxy, metaprogramming, reflect",
-      "date"     : "2019-04-12 00:00:00 +0200",
+      "date"     : "2022-08-12 00:00:00 +0200",
       "description" : "How to use Proxy es6 object in JS for metaprogramming"
 
     } 

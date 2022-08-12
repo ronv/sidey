@@ -3,6 +3,6 @@ layout: page
 title: About
 ---
 
-I’m a Ruby/JS software developer from Wrocław, Poland and I have a pleasure to implement solutions written in JS that are used by worldwide companies. I'm into software architecture, design patterns and working with legacy code. 
+I'm a Ruby and JS software developer from Poland and I implement Ruby & JS-based solutions used by multinational corporations. I'm interested in software architecture, design patterns, and legacy code refactoring.
 
-<!-- Don't hesitate to contact me if you have any questions or comments on my shared content. You can find me on [twitter](https://twitter.com/BochPatryk), [github](https://github.com/patrykboch), or email: _patrykboch at gmail dot com_. -->
+If you have any questions or feedback, don't be afraid to get in touch with me. You can find me on [twitter](https://twitter.com/bochdev), [github](https://github.com/patrykboch), or email: patrykboch _at_ gmail.com.

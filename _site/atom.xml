@@ -4,7 +4,7 @@
  <title>boch.dev</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-02-22T23:20:32+01:00</updated>
+ <updated>2022-08-12T13:59:11+02:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Patryk</name>
@@ -14,12 +14,12 @@
  
  <entry>
    <title>Proxy as the way of metaprogramming in JS</title>
-   <link href="http://localhost:4000/2019/04/12/proxy-as-the-way-of-metaprogramming-in-js"/>
-   <updated>2019-04-12T00:00:00+02:00</updated>
-   <id>http://localhost:4000/2019/04/12/proxy-as-the-way-of-metaprogramming-in-js</id>
-   <content type="html">&lt;p&gt;Important note: Described &lt;em&gt;Proxy&lt;/em&gt; JS object is something different than one of the OOP patterns.&lt;/p&gt;
+   <link href="http://localhost:4000/2022/08/12/proxy-as-the-way-of-metaprogramming-in-js"/>
+   <updated>2022-08-12T00:00:00+02:00</updated>
+   <id>http://localhost:4000/2022/08/12/proxy-as-the-way-of-metaprogramming-in-js</id>
+   <content type="html">&lt;p&gt;Important note: Described &lt;em&gt;Proxy&lt;/em&gt; object is something different than one of the OOP patterns.&lt;/p&gt;
 
-&lt;p&gt;Since I started using JS every single day I’ve experienced some weird aspects of JS. One of them annoys me - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; instead of code execution error when accessing unexistent properties. The JS behavior in this aspect is slightly different from Ruby that I’m used to:&lt;/p&gt;
+&lt;p&gt;I’ve seen several odd JS characteristics ever since I started using it on a daily basis. One of these irritates me — &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; rather than a code execution error when attempting to access properties that don’t exist. In this regard, JS behaves somewhat differently from my experience with Ruby:&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/patrykboch/48bf5dd1f626c2c889c8bfa43931dd51.js&quot;&gt;&lt;/script&gt;
 
@@ -27,33 +27,31 @@
 
 &lt;script src=&quot;https://gist.github.com/patrykboch/c29bb0a5faacee9c1548c23eb4eff44b.js&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;Ruby produces the error throw, JS returns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;. Imagine working on a big JS project and a small property typo breaks an app - because of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; instead of the &lt;em&gt;key not found&lt;/em&gt; throw - don’t know why and where since there are lots of possibly places for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; (debugging undefined may take a long time). Luckily the ES6+ standard gives a solution to this via built-in Proxies objects.&lt;/p&gt;
+&lt;p&gt;The error throw is produced by Ruby, but JS returns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;. Imagine working on a large JS project and a simple property typo results in an app being broken because &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; was used instead of the &lt;em&gt;key not found&lt;/em&gt; throw. You would not know why or where this happened because &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; may appear throughout many different places (debugging undefined may take a long time). Fortunately, the built-in Proxies objects provided by the ES6+ standard provide a solution to the concern.&lt;/p&gt;
 
-&lt;p&gt;Since the release of ES6, JS is known as fully reflective programming language as the Reflection API has been advanced.&lt;/p&gt;
+&lt;p&gt;Since the release of ES6, JS is known as fully reflective programming language as the &lt;em&gt;Reflection API&lt;/em&gt; has been advanced.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Reflection is the ability of a computer program to examine, introspect, and modify its own structure and behavior at runtime.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;That means a program can process itself on the three noted levels. Please note ES5 has provided the ability to reflective introspection and self-modification: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.keys()&lt;/code&gt; for introspection or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object#delete&lt;/code&gt; for self-modification - all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.*&lt;/code&gt; methods are taken as reflective for metaprogramming, but neither they nor other ES5 features support the third level of reflection - &lt;em&gt;behavioral level&lt;/em&gt; and it was the reason for introducing proxies in ES6 that change built-in language operations.&lt;/p&gt;
+&lt;p&gt;That implies that a program can execute on each of the three levels mentioned. Please be aware that ES5 has provided the potential of reflective introspection and self-modification - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.keys()&lt;/code&gt; for introspection or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object#delete&lt;/code&gt; for self-modification - also all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.*&lt;/code&gt; methods are taken as reflective for metaprogramming, but neither they nor other ES5 features support the third level of reflection - &lt;em&gt;behavioral level&lt;/em&gt; which is the reason for the introduction of proxies in ES6 that alter built-in language operations.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc). &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming&quot;&gt;(official docs)&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Using proxies is a manner for virtualizing objects eg. POJOs. Virtualized object peeks the same as a given object, and any operation on a given one directs to an already created virtualized by a proxy object. By virtualization, we can take control of standard methods default behavior by intercepting invocations and re-defining them.&lt;/p&gt;
+&lt;p&gt;Using proxies is a way for virtualizing objects eg. POJOs. Virtualized object peeks the same as a given object, and any operation on a given one directs to an already created virtualized by a proxy object. By virtualization, we can take control of standard methods default behavior by intercepting invocations and re-defining them.&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/patrykboch/cf189feaad1e574d01194ff9d9a04a31.js&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Nothing special above, virtualization of the object and the property lookup without invoking any operations
-(see: &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#No-op_forwarding_proxy&quot;&gt;no-op forwarding&lt;/a&gt;). 
-If you add a property for an object, the same property for a proxy object is added. Kinda symlink, but proxies are built 
-for intercepting the low-level operations on the target object indeed. The first argument for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Proxy&lt;/code&gt; constructor is target, the second is handler.&lt;/p&gt;
+(see: &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#No-op_forwarding_proxy&quot;&gt;no-op forwarding&lt;/a&gt;). When you add a property to an object, the same property is added to the proxy object. Although it is a symlink, proxies are designed to intercept low-level operations on the target object.&lt;/p&gt;
 
-&lt;h2 id=&quot;error-instead-of-undefined&quot;&gt;Error instead of &lt;em&gt;undefined&lt;/em&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;error-instead-of-undefined&quot;&gt;Error instead of undefined&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;…when accessing non-existent property with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get&lt;/code&gt; trap.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Let’s figure out a problem mentioned at the beginning of the article. How we can change the default behoaviour that ends with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; instead of code execution error like in Ruby or Python? At the beggining let’s describe the default behaviour with a proxy object:&lt;/p&gt;
+&lt;p&gt;Let’s solve the issue that is raised at the beginning of the post. How can the default behavior, which terminates in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; be changed to an error caused by code execution like in Ruby or Python? Let’s start by describing the default behavior using a proxy object:&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/patrykboch/d069e35aaf76b55c5f75ffe6a35eef34.js&quot;&gt;&lt;/script&gt;
 
@@ -61,8 +59,9 @@ for intercepting the low-level operations on the target object indeed. The first
 
 &lt;script src=&quot;https://gist.github.com/patrykboch/3e2608d8ba474e311066d7bafe06127e.js&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;I use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get&lt;/code&gt; trap to intercept the default behavior when accessing the property. I passed three arguments to the trap: 1) the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;trapTarget&lt;/code&gt; - the target object for the proxy, 2) the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;key&lt;/code&gt; - the property and 3) the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;receiver&lt;/code&gt; - it’s the proxy reference.
-Logic ends with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reflect&lt;/code&gt; - the js object without constructor which expresses a default js behavior. Every proxy trap has an equivalent in a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reflect&lt;/code&gt; method.
+&lt;p&gt;I passed the trap the following three arguments: 1) the target object for the proxy is denoted the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;trapTarget&lt;/code&gt; 2) the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;key&lt;/code&gt; - the property and 3) the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;receiver&lt;/code&gt; - the proxy reference. The js object &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reflect&lt;/code&gt;, which describes the default behavior of js. Please note there is a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reflect&lt;/code&gt; technique for each proxy trap.&lt;/p&gt;
+
+&lt;p&gt;To recap, operations can be intercepted using a handler and a proxy trap, which is a function that is always supplied as the second proxy argument and is in charge of the operation.
 &lt;br /&gt; 
 &lt;br /&gt;&lt;/p&gt;
 &lt;center&gt;&lt;div class=&quot;mxgraph&quot; style=&quot;max-width:100%;border:1px solid transparent;&quot; data-mxgraph=&quot;{&amp;quot;highlight&amp;quot;:&amp;quot;#0000ff&amp;quot;,&amp;quot;lightbox&amp;quot;:false,&amp;quot;nav&amp;quot;:true,&amp;quot;resize&amp;quot;:true,&amp;quot;toolbar&amp;quot;:&amp;quot;zoom&amp;quot;,&amp;quot;edit&amp;quot;:&amp;quot;_blank&amp;quot;,&amp;quot;xml&amp;quot;:&amp;quot;&amp;lt;mxfile modified=\&amp;quot;2019-04-28T10:57:51.851Z\&amp;quot; host=\&amp;quot;www.draw.io\&amp;quot; agent=\&amp;quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36\&amp;quot; etag=\&amp;quot;KT1R89YZZIPHrD0EufzU\&amp;quot; version=\&amp;quot;10.6.5\&amp;quot; type=\&amp;quot;device\&amp;quot;&amp;gt;&amp;lt;diagram id=\&amp;quot;lh_yR_ml-EyFlSGjHwGa\&amp;quot; name=\&amp;quot;Page-1\&amp;quot;&amp;gt;3VnfU+IwEP5rmLl70GmbttBHFfUevNE7nbnTt0BDG680TAhC/esvoUl/JMWCUnR4orvdbpJv90t2Qw9cTFfXFM7inyRESc+xwlUPDHuOY7vBgP8ITZZrAiEJRURxKI1KxT1+RVJpSe0Ch2heM2SEJAzP6soxSVM0ZjUdpJQs62YTktRHncEIGYr7MUxM7R8csjjXDjyr1P9AOIrVyLYl30yhMpaKeQxDsqyowGUPXFBCWP40XV2gRICncMm/u9rwtpgYRSnb5oMgunGePHobXi+sx+df/5wna3Di515eYLKQC76dIQoZJqmcNcsUFMsYM3Q/g2MhL3m4e+A8ZtOESzZ/lJ4QZWi1cYp2sXCeMYhMEaMZN5EfOArWTKWPlJcl9AXAcQV2ZQdltKPCdQkIf5CY7IBP38DnN5ovEvYJ4HiDrwbOwADHgAWFnE1SRMmILC9LxflawV8IWDCnXB0yShZpiMT4VgGgcPc2fHx0sqBj1J7zDNIIsbbYm+GgKOH8eKnPownb9adnlMKsYjAjOGXziuc7oSijDFwtyr7Gas3e7TdnRRnXfAZllIulvD/wanM+SOR5fGn2VwinwFHyI5dPrFPLU4rhqmo+zKrSHaKYLxlRpVxhljt0PCk+yqHFc+lKCFlHCfjRxDIyoTgyVSYMNN7n85JfvZVSrlNz5PiDuqOcOYajXVPd1SZsHGA6NbQNUC144zp0/1aLf78ZwG3no1G1I+rZh6ReQRTfrTJFMK+gTjNdhGDwrmSyVyWy3ULi7al3mD29YRP2NMYE76OerxdAOof3RD29lmijnuftRj2gn0pBi32g2fcPQSXXoNKUhHjCWdFY//LSjWlsQXP8CkdrA5GoEnZu7Z33vCHXwAUj87ypER/ABEcpf07QRLhSHDyTakZE2TjnVSROowchDE/c/VSPrlNPUeCY1WPQUDw6XRWPtllah2gC17W1NUIxfMGE9sTwV2uCThLe3q3D4icCuxF/6UdsjY6pOabQGeQADYW/3xA70FnszMqfo4f4Fjc7PuboZYHTAP+gAX27M/QDA/35DI3FxiWoAxV1jikIntUehMbmt7MoALMQexBt/+EvBow6t78lNp1dDADzZL2jZJV9+35cWVlkYaahXEHeO2hSmoeqgXi1OyCUxSQiKUyqLUK9CShtbsgaPYH5M2Isk7e1IhxNSb2XXhnIsqW1st9LU71rHe1odXRLmfu2eTdVrgKwesU7ehZX5YffqfT73U+/wVQ3HZ/Ml7LP7m9/IVXppvu1drpsoD/aTn8xdpp8Chr5tHPbrfuxPc3RntpuoDVhqpLf2Ba/bd/NhuECgxMxTMMEHVlJaQQ98IzdqKmresfhzcXyf748TuW/peDyPw==&amp;lt;/diagram&amp;gt;&amp;lt;/mxfile&amp;gt;&amp;quot;}&quot;&gt;&lt;/div&gt;
@@ -70,11 +69,8 @@ Logic ends with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&
 &lt;p&gt;&lt;br /&gt; 
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Intercepting operations are possible by handler and a proxy trap - a function that is responsible for operation and it’s passed always as the second proxy argument.
-On the diagram I’ve displayed two branches - default behavior, and interception of a default behavior by Proxy. 
-Default reflection on the basic level returns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;. We can achieve the same result with proxy too.&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/patrykboch/53d8b22a4c7a58ae4951dd97574c3b0b.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;I’ve shown two branches on the diagram: the default behavior and the proxy’s interception of the default behavior.
+On the most fundamental level, default reflection yields &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;. The same outcome is also possible with a proxy.&lt;/p&gt;
 
 &lt;p&gt;The second branch - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Proxy&lt;/code&gt; intercepts default behaviour by get trap in the handler and raises an error in the code example if property doesn’t exist.
 Note: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get&lt;/code&gt; trap is one of many others traps - 
@@ -87,24 +83,15 @@ Note: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get&lt;
   &lt;p&gt;Two-way-data binding links the state with the view. If the state changes the view is updated and if the view changes the state will be updated.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;If you want to write your own js framework based on two-way data binding then using Proxy is the way to go. A proxy can link our view with application state. Look at the following example:&lt;/p&gt;
-
+&lt;p&gt;Using Proxy is the way to go if you want to create your own two-way data binding-based js framework. Our view can be connected to application state through a proxy. Consider the following illustration:
 &lt;script src=&quot;https://gist.github.com/patrykboch/3d7b1627643facc4cbdf0ba273d4a877.js&quot;&gt;&lt;/script&gt;
-
 &lt;script src=&quot;https://gist.github.com/patrykboch/13f5bd92ce082e698aabe2f90032e173.js&quot;&gt;&lt;/script&gt;
+&lt;a href=&quot;https://jsfiddle.net/edzv5L0q/&quot;&gt;see live example&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://jsfiddle.net/edzv5L0q/&quot;&gt;see live example&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;The state and the view are now bound. The view alters as the state does. First, I gave the DOM input elements a brand-new attribute called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data-model&lt;/code&gt;. The key component of two-way data binding is the model, which connects input value and app state. After that, I created the straightforward state interface with two keys (name and hobby).
+It’s good to note that only keys that have been set in the interface can be modified in a proxy; otherwise, an error will be raised if eg. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state.strangerKey = &quot;Hello&quot;&lt;/code&gt;. The next step is to build a proxy that has a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set&lt;/code&gt; trap in the handler; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;updateView&lt;/code&gt; is added between calls to the default engine set behavior, which means that each time the state is attempted to be changed, the input values in the view will also be altered. From a view to a state direction. Also listeners have been provided to the view that detect input value changes and trigger the state change. So registering listeners on DOM elements is crucial because only registered listeners can change the state via the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;onInputChange&lt;/code&gt; event handler.&lt;/p&gt;
 
-&lt;p&gt;The view and the state have been binded. Changing the state changes the view. At first, I added a new attribute
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data-model&lt;/code&gt; to the DOM input elements. The model links input value with the app state, so that’s the main part of 
-two-way data binding. I designed the simple state interface afterwards that contains two keys (name and hobby). 
-The important thing - only keys that are set in the interface can be updated in a proxy - i.e. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state.strangerKey = 'Hello'&lt;/code&gt; will raise an error.
-Next thing is creating a proxy with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set&lt;/code&gt; trap in the handler. Between calling default engine set behaviour we added &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;updateView&lt;/code&gt; - 
-it means that every attempt of setting state will update the input values in the view. From a view to a state direction.
-I implemented listeners that listen to input value changes in the view and trigger the state change. So the important thing is 
-registering listeners on DOM elements as only registered listeners can change the state via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;onInputChange&lt;/code&gt; event handler.&lt;/p&gt;
-
-&lt;p&gt;The journey with Proxy wound up, I presented the most common proxy traps - get and set but keep in mind 
+&lt;p&gt;For now, the journey with Proxy wound up, I’ve presented the most common proxy traps - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;get&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set&lt;/code&gt; but keep in mind 
 that Proxy supports twelve more handlers which can be used for different purposes, especially in metaprogramming.&lt;/p&gt;
 
 &lt;p&gt;PS. Metaprogramming rocks :).

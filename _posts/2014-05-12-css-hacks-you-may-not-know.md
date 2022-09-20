@@ -1,7 +1,7 @@
 ---
 layout: post
-title: CSS hacks you may not know
-description: This is a collection of short CSS snippets I thought might be useful for beginners
+title: rei
+description: first title edit here
 summary: This is a collection of short CSS snippets I thought might be useful for beginners.
 tags: [css]
 ---

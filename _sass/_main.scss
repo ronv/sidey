@@ -200,3 +200,11 @@ section {
 figcaption {
     font-size: smaller;
 }
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}

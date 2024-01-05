@@ -1,16 +1,15 @@
-site: Sidey
-url: #yoururl
-title: Sidey
-description: Simple and minimalistic jekyll blogging theme.
+site: DACC
+url: daccpampa.github.io
+title: Diretório Acadêmico da Ciência da Computação do Pampa
+description: O Diretório Acadêmico do curso de Bacharelado em Ciência da Computação da Universidade Federal do Pampa
 twitter:
   username: #yourusername
   card: summary
   creator: #yourusername
 author:
-  twitter: #yourusername
-  name: #yourusername
+  name: DACC
   avatar:
-  email: #youremail
+  email: dacc@unipampa.edu.br
   url: #yoururl
 permalink: pretty
 
